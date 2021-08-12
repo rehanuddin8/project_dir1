@@ -1,0 +1,13 @@
+public class java_A5_Q1 
+{
+	public static void main(String[] args) 
+	{
+		Set<Employee> set= new HashSet<>();
+		set.add(new Employee(1,"Tony", 6000000,"AI"));
+		set.add(new Employee(1,"Steve", 2000000,"Military"));
+		set.add(new Employee(1,"Thor", 3600000,"God"));		
+		Iterator<Employee> i= set.iterator();
+		while(i.hasNext())
+			System.out.println(i.next());
+	}
+}
