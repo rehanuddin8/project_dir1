@@ -1,0 +1,36 @@
+class InsufficientBalanceException extends RuntimeException
+{
+	private static final long serialVersionUID = 1L;	
+}
+class IllegalBankTransactionException extends RuntimeException
+{
+	private static final long serialVersionUID = 1L;	
+}
+class SavingAccount
+{
+	long id=1;
+	double balance=10000;
+	
+	double withdraw(double amount) 
+	{
+		if(balance<amount)
+		{
+			throw new InsufficientBalanceException();
+		}
+		else if(amount<0) 
+		{
+			throw new IllegalBankTransactionException();
+		}
+		else 
+		{
+			balance-=amount;
+		}
+		return balance;
+	}
+	
+	double deposit(double amount) 
+	{
+		balance+=amount;
+		return balance;
+	}
+}
